@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARTELERA CAMPUS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<style>
+    h1 {
+        /* cada vez que se utilice tenga estas propiedades */
+        font-weight: bold;
+        /* negrita */
+        text-align: center;
+        /* centrado */
+    }
+
+    h2 {
+        /* cada vez que se utilice tenga estas propiedades */
+        text-align: center;
+        /* centrado */
+        font-size: 26px;
+        /* tamaño */
+        font-weight: bold;
+        /* negrita */
+    }
+
+    h3 {
+        /* cada vez que se utilice tenga estas propiedades */
+        text-align: left;
+        /* este en la derecha */
+        font-size: 25px;
+        /* tamaño */
+        font-weight: bold;
+        /* negrita */
+        margin-left: 20px;
+        /* margen-derecha */
+    }
+
+    h4 {
+        /* cada vez que se utilice tenga estas propiedades */
+        text-align: left;
+        /* este en la derecha */
+        font-size: 28px;
+        /* tamaño */
+        font-weight: bold;
+        /* negrita */
+    }
+
+    h5 {
+        /* cada vez que se utilice tenga estas propiedades */
+        text-align: left;
+        /* este en la derecha */
+        font-size: 22px;
+        /* tamaño */
+        font-weight: bold;
+        /* negrita */
+        margin-top: 2px;
+        /* margen-arriba */
+    }
+
+    h6 {
+        /*cada vez que se utilice tenga estas propiedades - contacto*/
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 2px;
+    }
+
+    img {
+        /*es una imagen */
+        width: 95%;
+        /* ancho */
+        border-radius: 5px;
+        /* redondear esquina */
+    }
+
+    hr {
+        /* es una linea */
+        border: 1px solid black;
+        /* grosor */
+        width: 50%;
+        /* ancho */
+        margin: auto;
+        /* centrar la línea */
+    }
+
+    .subtitle {
+        /* cada vez que se utilice tenga estas propiedades */
+        margin-top: -6px;
+        /* margen-arriba */
+        text-align: center;
+        /* centrado */
+        font-size: 16px;
+        /* tamaño */
+    }
+
+    .sinopsis {
+        /* cada vez que se utilice tenga estas propiedades */
+        text-align: justify;
+        /* justificado */
+    }
+
+    .horarios-container {
+        /* cada vez que se utilice tenga estas propiedades */
+        display: flex;
+        /* ayuda a alinear */
+        gap: 10px;
+        /* distancia-hueco */
+    }
+
+    .hora-boton {
+        /* se trata de un rectangulo */
+        width: 150px;
+        /* ancho */
+        height: 80px;
+        /* altura */
+        border: 2px solid black;
+        /* grosor */
+        border-bottom-right-radius: 10px;
+        /* borde-abajo-izquierda-redondeado */
+        display: flex;
+        /* ayuda a alinear */
+        flex-direction: column;
+        /* organiza los elementos en columna */
+        justify-content: space-between;
+        /* espaciado */
+    }
+
+    .hora {
+        /* cada vez que se utilice tenga estas propiedades */
+        font-size: 22px;
+        /* tamaño */
+        font-weight: bold;
+        /* negrita */
+        margin-left: 10px;
+        /* margen-derecha */
+        margin-top: 5px;
+        /* margen-arriba */
+    }
+
+    .sala {
+        /* cada vez que se utilice tenga estas propiedades */
+        margin-left: 12px;
+        /* margen-izquierda */
+        margin-top: -15px;
+        /* margen-arriba */
+    }
+
+    /* texto sirve para seleccionar exclusivamente donde se puede escribir texto*/
+    input[type=texto],
+    select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+    div-contacto {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+</style>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Menú</a></li>
+            <li><a href="#precio">Precio</li>
+            <li><a href="#eventos">Eventos</li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#lugar">Lugar</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container" style="width: 100%; margin-top: 10px;">
+        <!-- container es del bootstrap, forma una cuadradito predetermiado -->
+
+        <!-- TITULAR -->
+        <div class="row">
+            <!-- row = fila  -->
+            <div class="col" id="home" style="text-align: center;">
+                <!-- col "es una columna, se pone para que sea resoponsive, si se hace grande esta columna se hara grande y viceversa"
+           	 
+            	id=home "cada vez que pique en la navbar que hay te redirije en el h1" -->
+                <h1>Cine Campus</h1>
+                <p style="font-size: 18px; margin-top: -10px; color: black;">¿Que ver hoy? Estrenos que te sorprenderan!
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <!-- Beetlejuice 1-->
+            <div class="col">
+                <!-- añadimos una fila  -->
+                <h2> <a href="#beetlejuice" style="color: #000; text-decoration: none;">Beetlejuice (2024)</a></h2>
+                <!-- href "es una referencia para que nos redirija luego abajo, por predeterminado sale con un color y una línea, por eso se le pone style, cambiando su color y que no tenga líena" -->
+                <p class="subtitle">Dirigido por Tim Burton</p>
+                <!-- llamamos a "subtitle" porque tiene un estilo determinado añadido previamente -->
+                <div style="text-align: center;">
+                    <!-- añadimos un apartado para la imagen -->
+                    <a href="https://www.youtube.com/watch?v=9SzBZZhN0fQ" target="_blank">
+                        <!-- adjuntamos el link del trailer y el target='blank' para que se vea desde otra pestaña -->
+                        <img src="https://www.fangoria.com/wp-content/uploads/2024/06/BEETLEJUICE-BEETLEJUICE-The-Afterlife-Experience-w-Logo-16x9.-Credit-Fever.jpg"
+                            alt="BEETLEJUICE-TRAILER/IMAGE" style="text-align: center;">
+                        <!-- añadimos la imagen  -->
+                    </a>
+                    <!-- este apartado es <a href='...'> <img src='...' alt='lo que se veria si no tuvieramos conexión'> -->
+                </div>
+            </div>
+
+            <!-- Wicked-->
+            <div class="col">
+                <!-- añadimos una fila  -->
+                <h2> <a href="#wicked" style="color: #000; text-decoration: none;">Wicked (2024)</a></h2>
+                <!-- href "es una referencia para que nos redirija luego abajo, por predeterminado sale con un color y una línea, por eso se le pone style, cambiando su color y que no tenga líena" -->
+                <p class="subtitle">Dirigido por Jon M. Chu</p>
+                <!-- llamamos a "subtitle" porque tiene un estilo determinado añadido previamente -->
+                <div style="text-align: center;">
+                    <!-- añadimos un apartado para la imagen -->
+                    <a href="https://www.youtube.com/watch?v=UNHQgy3jawI" target="_blank">
+                        <!-- adjuntamos el link del trailer y el target='blank' para que se vea desde otra pestaña -->
+                        <img src="https://4kwallpapers.com/images/walls/thumbs_3t/18391.jpeg" alt="WICKED-TRAILER/IMAGE"
+                            style="text-align: center;">
+                        <!-- añadimos la imagen  -->
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- cerramos para que haya solo dos columnas y se repite cada cuantas filas queramos el mismo proceso -->
+
+        <div class="row">
+            <!-- Joker-->
+            <div class="col" style="margin-top: -15px;">
+                <h2> <a href="#joker" style="color: #000; text-decoration: none;">Joker 2 (2024)</a></h2>
+                <p class="subtitle">Dirigido por Todd Phillips</p>
+                <div style="text-align: center;">
+                    <a href="https://www.youtube.com/watch?v=_OKAwz2MsJs" target="_blank">
+                        <img src="https://hips.hearstapps.com/hmg-prod/images/joker-2-joaquin-phoenix-lady-gaga-660d5efa550b3.jpg?crop=1xw:1xh;center,top"
+                            alt="JOKER-TRAILER/IMAGE" style="text-align: center;">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Smile2-->
+            <div class="col" style="margin-top: -15px;">
+                <h2> <a href="#smile" style="color: #000; text-decoration: none;">Smile 2 (2024)</a></h2>
+                <p class="subtitle">Dirigido por Parker Finn</p>
+                <div style="text-align: center;">
+                    <a href="https://www.youtube.com/watch?v=69GcScd6sGk" target="_blank">
+                        <img src="https://img.asmedia.epimg.net/resizer/v2/XNIPQFK4GNGDTPVUXBUALQ6EWA.jpg?auth=c7a873a106bc25aede4362eca96aeb51ed5dd441017929962efad69ab49eaf44&width=644&height=362&smart=true"
+                            alt="SMILE-TRAILER/IMAGE" style="text-align: center;">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- cerramos para que haya solo dos columnas y se repite cada cuantas filas queramos el mismo proceso -->
+
+        <div class="row">
+            <!-- No Hables Con Extraños-->
+            <div class="col" style="margin-top: -15px;">
+                <h2> <a href="#nohablesconextraños" style="color: #000; text-decoration: none;">No hables con extraños
+                        (2024) </a></h2>
+                <p class="subtitle">Dirigido por James Watkins</p>
+                <div style="text-align: center;">
+                    <a href="https://youtu.be/B34IFHkBxcs" target="_blank">
+                        <img src="https://i.ytimg.com/vi/InvnbXX0VV8/maxresdefault.jpg"
+                            alt="NOHABLESCONEXTRAÑOS-TRAILER/IMAGE" alt="WICKED-TRAILER/IMAGE"
+                            style="text-align: center;">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Robot Salvaje-->
+            <div class="col" style="margin-top: -15px;">
+                <h2> <a href="#robotsalvaje" style="color: #000; text-decoration: none;">Robot salvaje (2024)</a></h2>
+                <p class="subtitle">Dirigido por Chris Sanders</p>
+                <div style="text-align: center;">
+                    <a href="https://www.youtube.com/watch?v=8-_4gvrHAys" target="_blank">
+                        <img src="https://i.ytimg.com/vi/8-_4gvrHAys/maxresdefault.jpg" alt="ROBOTSALVAJE-TRAILER/IMAGE"
+                            style="text-align: center;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr> <!-- Añadamos una línea --> </hr>
+
+
+    <!-- BeetleJuice Info -->
+    <div class="container" style="width: 100%; margin-top: 10px;">
+        <!-- creamos un contenedor para este apartado -->
+
+        <div class="row" id="beetlejuice">
+            <!-- añadimos una fila para que cuando piquen el título nos redirigen aqui que se ha añadido antes mediante <a href="#xx"> -->
+
+            <!-- Columna Imagen -->
+            <div class="col-4" style="text-align: center;">
+                <!-- hacemos que ocupe 4 columnas por asi decirlo -->
+                <img src="https://www.mubis.es/media/articles/33776/331029/nuevo-trailer-de-bitelchus-bitelchus-en-castellano-original.jpg"
+                    style="max-width: 100%; height: auto;">
+                </img>
+                <!-- añadimos la imagen -->
+                <p><a href="https://www.youtube.com/watch?v=9SzBZZhN0fQ" target="_blank"
+                        style="text-decoration: none; font-weight: 500;">Reproducir tráiler</a></p>
+                <!-- añadimos el trailer mediante un texto -->
+            </div>
+
+            <!-- Detalles -->
+            <div class="col-8">
+                <!-- que ocupe 8 columnas -->
+                <h4>Beetlejuice (2024)</h4>
+                <p style="margin-top: -8px;">Dirigido por Tim Burton</p>
+
+                <!-- Sinopsi -->
+                <div class="sinopsis">
+                    <p>
+                        Tras una inesperada tragedia familiar, tres generaciones de la familia Deetz regresan a Winter
+                        River. La vida de Lydia, todavía atormentada por Bitelchús, da un vuelco cuando su rebelde hija
+                        adolescente, Astrid, descubre la misteriosa maqueta de la ciudad en el desván y el portal al Más
+                        Allá se abre accidentalmente. Con los problemas que se avecinan en ambos reinos, es sólo
+                        cuestión de tiempo que alguien diga el nombre de Bitelchús tres veces y el travieso demonio
+                        regrese para desatar su propio caos.
+                    </p>
+                </div>
+
+                <!-- Duración -->
+                <p style="font-weight: bold; color: #000;">DURACIÓN</p>
+                <p style="margin-top: -15px; margin-bottom: 35px;">| 1h 44m |</p>
+
+                <!-- Hora -->
+                <div class="horarios-container">
+                    <!-- añadimos un container para los horarios con un estilo predeterminado creado previamente-->
+                    <div class="hora-boton">
+                        <!-- esto se trata del recuadro  -->
+                        <div class="hora">
+                            <!-- añadir las propiedades que le pusimos anteriormente al texto -->
+                            <p style="color: black;">17:15</p>
+                        </div>
+                        <div class="sala">
+                            <!-- añadir las propiedades que le pusimos anteriormente al texto -->
+                            <p>Sala 2</p>
+                        </div>
+                    </div>
+
+                    <div class="hora-boton">
+                        <div class="hora">
+                            <p style="color: black;">19:15</p>
+                        </div>
+                        <div class="sala">
+                            <p>Sala 4</p>
+                        </div>
+                    </div>
+
+                    <div class="hora-boton">
+                        <div class="hora">
+                            <p style="color: black;">20:45</p>
+                        </div>
+                        <div class="sala">
+                            <p>Sala 2</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- cerramos la hora -->
+            </div>
+        </div>
+    </div>
+
+    <hr> <!-- Añadamos una línea --> </hr>
+
+    <!-- Wicked Info -->
+    <div class="container" style="width: 100%; margin-top: 10px;">
+        <div class="row" id="wicked">
+
+            <div class="col-4" style="text-align: center;">
+                <img src="https://pics.filmaffinity.com/wicked_part_one-562940006-large.jpg"
+                    style="max-width: 100%; height: auto;">
+                </img>
+                <p><a href="https://www.youtube.com/watch?v=Qbi0-w4UiZI" target="_blank"
+                        style="text-decoration: none; font-weight: 500;">Reproducir tráiler</a>
+                </p>
+            </div>
+
+            <!-- Detalles -->
+            <div class="col-8">
+                <h4>Wicked (2024)</h4>
+                <p style="margin-top: -8px;">Dirigido por Jon M. Chu</p>
+
+                <!-- Sinopsi -->
+                <div class="sinopsis">
+                    <p>
+                        Wicked sigue el viaje de las legendarias brujas del mundo de Oz. Elphaba, incomprendida por el
+                        color inusual de su piel verde, ni siquiera sospecha el alcance de sus poderes. A su lado,
+                        Glinda, que, tan popular como privilegiada, aún no conoce la verdadera naturaleza de su corazón.
+                        Su encuentro en la Universidad de Shiz, en el fantástico mundo de Oz, marca el comienzo de una
+                        amistad improbable pero profunda.
+                    </p>
+                </div>
+
+                <!-- Duración -->
+                <p style="font-weight: bold; color: #000;">DURACIÓN</p>
+                <p style="margin-top: -15px; margin-bottom: 35px;">| 1h 48m |</p>
+
+                <!-- Hora -->
+                <div class="horarios-container">
+                    <div class="hora-boton">
+                        <div class="hora">
+                            <p style="color: black;">14:50</p>
+                        </div>
+                        <div class="sala">
+                            <p>Sala 2</p>
+                        </div>
+                    </div>
+
+                    <div class="hora-boton">
+                        <div class="hora">
+                            <p style="color: black;">16:15</p>
+                        </div>
+                        <div class="sala">
+                            <p>Sala 7</p>
+                        </div>
+                    </div>
+
+                    <div class="hora-boton">
+                        <div class="hora">
+                            <p style="color: black;">19:00</p>
+                        </div>
+                        <div class="sala">
+                            <p>Sala 4</p>
+                        </div>
+                    </div>
+
+                    <div class="hora-boton">
+                        <div class="hora">
+                            <p style="color: black;">21:35</p>
+                        </div>
+                        <div class="sala">
+                            <p>Sala 8</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr> <!-- Añadamos una línea --> </hr>
+
+    <!-- Joker Info -->
+    <div class="container" style="width: 100%; margin-top: 10px;">
+        <div class="row" id="joker">
+
+            <!-- Columna Imagen -->
+            <div class="col-4" style="text-align: center;">
+                <img src="https://i0.wp.com/cornellsun.com/wp-content/uploads/2024/10/joker-2.jpeg?fit=480%2C640&ssl=1"
+                    style="max-width: 100%; height: auto;">
+                </img>
+                <p><a href="https://www.youtube.com/watch?v=_OKAwz2MsJs" target="_blank"
+                        style="text-decoration: none; font-weight: 500;">Reproducir tráiler</a></p>
+            </div>
+
+            <!-- Detalles -->
+            <div class="col-8">
+                <h4>Joker: Folie à Deux (2024)</h4>
+                <p style="margin-top: -8px;">Dirigido por Todd Phillips</p>
+
+                <!-- Sinopsi -->
+                <div class="sinopsis">
+                    <p>
+                        Tras crear el caos, Arthur Fleck ha sido internado en el Asilo Arkham a la espera de juicio por
+                        sus crímenes como Joker. Mientras lucha con su doble identidad, Arthur no sólo tropieza con el
+                        amor verdadero, sino que también encuentra la música que siempre ha estado dentro de él.
+                    </p>
+                </div>
+
+                <!-- Duración -->
+                <p style="font-weight: bold; color: #000;">DURACIÓN</p>
+                <p style="margin-top: -15px; margin-bottom: 35px;">| 2h 17m |</p>
+
+                <!-- Hora -->
+                <div class="horarios-container">
+                    <div class="hora-boton">
+                        <div class="hora">
+                            <p style="color: black;">12:10</p>
+                        </div>
+                        <div class="sala">
+                            <p>Sala 1</p>
+                        </div>
+                    </div>
+
+                    <div class="hora-boton">
+                        <div class="hora">
+                            <p style="color: black;">13:15</p>
+                        </div>
+                        <div class="sala">
+                            <p>Sala 2</p>
+                        </div>
+                    </div>
+
+                    <div class="hora-boton">
+                        <div class="hora">
+                            <p style="color: black;">17:00</p>
+                        </div>
+                        <div class="sala">
+                            <p>Sala 2</p>
+                        </div>
+                    </div>
+
+                    <div class="hora-boton">
+                        <div class="hora">
+                            <p style="color: black;">20:40</p>
+                        </div>
+                        <div class="sala">
+                            <p>Sala 3</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr> <!-- Añadamos una línea --> </hr>
+
+    <!-- Smile Info -->
+    <div class="container" style="width: 100%; margin-top: 10px;">
+        <div class="row" id="smile">
+
+            <!-- Columna Imagen -->
+            <div class="col-4" style="text-align: center;">
+                <img src="https://pics.filmaffinity.com/Smile_2-729696021-large.jpg"
+                    style="max-width: 100%; height: auto;">
+                </img>
+                <p><a href="https://www.youtube.com/watch?v=69GcScd6sGk" target="_blank"
+                        style="text-decoration: none; font-weight: 500;">Reproducir tráiler</a></p>
+            </div>
+
+            <!-- Detalles -->
+            <div class="col-8">
+                <h4>Smile 2 (2024)</h4>
+                <p style="margin-top: -8px;">Dirigido por Parker Finn</p>
+
+                <!-- Sinopsi -->
+                <div class="sinopsis">
+                    <p>
+                        La estrella del pop mundial Skye Riley (Naomi Scott) está a punto de embarcarse en una nueva
+                        gira mundial cuando empieza a experimentar una serie de sucesos cada vez más aterradores e
+                        inexplicables. Angustiada por la espiral de horrores y la abrumadora presión de la fama, Skye
+                        tendrá que enfrentarse a su oscuro pasado para recuperar el control de su vida antes de que sea
+                        demasiado tarde.
+                    </p>
+                </div>
+
+                <!-- Duración -->
+                <p style="font-weight: bold; color: #000;">DURACIÓN</p>
+                <p style="margin-top: -15px; margin-bottom: 35px;">| 4h 12m |</p>
+
+                <!-- Hora -->
+                <div class="horarios-container">
+                    <div class="hora-boton">
+                        <div class="hora">
+                            <p style="color: black;">13:10</p>
+                        </div>
+                        <div class="sala">
+                            <p>Sala 4</p>
+                        </div>
+                    </div>
+
+                    <div class="hora-boton">
+                        <div class="hora">
+                            <p style="color: black;">14:00</p>
+                        </div>
+                        <div class="sala">
+                            <p>Sala 5</p>
+                        </div>
+                    </div>
+
+                    <div class="hora-boton">
+                        <div class="hora">
+                            <p style="color: black;">21:00</p>
+                        </div>
+                        <div class="sala">
+                            <p>Sala 1</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr> <!-- Añadamos una línea --> </hr>
+
+    <!-- No Hables Con Extraños Info -->
+    <div class="container" style="width: 100%; margin-top: 10px;">
+        <div class="row" id="nohablesconextraños">
+
+            <!-- Columna Imagen -->
+            <div class="col-4" style="text-align: center;">
+                <img src="https://www.mubis.es/media/movies/7982/331710/no-hables-con-extranos-original.jpg"
+                    style="max-width: 100%; height: auto;">
+                </img>
+                <p><a href="https://youtu.be/B34IFHkBxcs" target="_blank"
+                        style="text-decoration: none; font-weight: 500;">Reproducir tráiler</a></p>
+            </div>
+
+            <!-- Detalles -->
+            <div class="col-8">
+                <h4>No hables con extraños (2024)</h4>
+                <p style="margin-top: -8px;">Dirigido por James Watkins</p>
+
+                <!-- Sinopsi -->
+                <div class="sinopsis">
+                    <p>
+                        Cuando una familia estadounidense va invitada a pasar un fin de semana en la idílica finca
+                        campestre de una encantadora familia británica que conocieron en unas vacaciones, lo que
+                        comienza como una escapada de ensueño pronto se convierte en una retorcida pesadilla
+                        psicológica.
+                    </p>
+                </div>
+
+                <!-- Duración -->
+                <p style="font-weight: bold; color: #000;">DURACIÓN</p>
+                <p style="margin-top: -15px; margin-bottom: 35px;">| 1h 49m |</p>
+
+                <!-- Hora -->
+                <div class="horarios-container">
+                    <div class="hora-boton">
+                        <div class="hora">
+                            <p style="color: black;">18:05</p>
+                        </div>
+                        <div class="sala">
+                            <p>Sala 9</p>
+                        </div>
+                    </div>
+
+                    <div class="hora-boton">
+                        <div class="hora">
+                            <p style="color: black;">21:50</p>
+                        </div>
+                        <div class="sala">
+                            <p>Sala 3</p>
+                        </div>
+                    </div>
+
+                    <div class="hora-boton">
+                        <div class="hora">
+                            <p style="color: black;">22:30</p>
+                        </div>
+                        <div class="sala">
+                            <p>Sala 15</p>
+                        </div>
+                    </div>
+
+                    <div class="hora-boton">
+                        <div class="hora">
+                            <p style="color: black;">00:05</p>
+                        </div>
+                        <div class="sala">
+                            <p>Sala 6</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr> <!-- Añadamos una línea --> </hr>
+
+    <!-- Robot Salvaje Info -->
+    <div class="container" style="width: 100%; margin-top: 10px;">
+        <div class="row" id="robotsalvaje">
+
+            <!-- Columna Imagen -->
+            <div class="col-4" style="text-align: center;">
+                <img src="https://pics.filmaffinity.com/the_wild_robot-598191664-large.jpg"
+                    style="max-width: 100%; height: auto;">
+                </img>
+                <p><a href="https://www.youtube.com/watch?v=8-_4gvrHAys" target="_blank"
+                        style="text-decoration: none; font-weight: 500;">Reproducir tráiler</a>
+                </p>
+            </div>
+
+            <!-- Detalles -->
+            <div class="col-8">
+                <h4>Robot salvaje (2024)</h4>
+                <p style="margin-top: -8px;">Dirigido por Chris Sanders</p>
+
+                <!-- Sinopsi -->
+                <div class="sinopsis">
+                    <p>
+                        El épico viaje de un robot -la unidad 7134 de Roz,'Roz' para abreviar- que naufraga en una isla
+                        deshabitada y debe aprender a adaptarse al duro entorno, entablando gradualmente relaciones con
+                        los animales de la isla y convirtiéndose en padre adoptivo de un pequeño ganso huérfano.
+                    </p>
+                </div>
+
+                <!-- Duración -->
+                <p style="font-weight: bold; color: #000;">DURACIÓN</p>
+                <p style="margin-top: -15px; margin-bottom: 35px;">| 1h 42m |</p>
+
+                <!-- Hora -->
+                <div class="horarios-container">
+                    <div class="hora-boton">
+                        <div class="hora">
+                            <p style="color: black;">15:35</p>
+                        </div>
+                        <div class="sala">
+                            <p>Sala 6</p>
+                        </div>
+                    </div>
+
+                    <div class="hora-boton">
+                        <div class="hora">
+                            <p style="color: black;">18:15</p>
+                        </div>
+                        <div class="sala">
+                            <p>Sala 7</p>
+                        </div>
+                    </div>
+
+                    <div class="hora-boton">
+                        <div class="hora">
+                            <p style="color: black;">20:45</p>
+                        </div>
+                        <div class="sala">
+                            <p>Sala 3</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr> <!-- Añadamos una línea --> </hr>
+
+    <!-- Carrousel -->
+    <div class="container" id="eventos">
+        <div id="Carrousel" class="carousel slide" style="margin-top: 10px;">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://www.elcorteingles.es/entradas/blog/wp-content/uploads/2020/09/Festivales-y-eventos-de-cine-que-no-te-puedes-perder.jpg"
+                        class="d-block w-100" alt="CINEMAFESTIVAL">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://static.costadelsolmalaga.org/visita/subidas/imagenes/1/7/arc_33571_g.jpg"
+                        class="d-block w-100" alt="FESTIVALDEMALAGA">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://festivalcinemadrid.es/wp-content/uploads/2020/09/Notas-prensa.jpg"
+                        class="d-block w-100" alt="FESTIVALDEMADRID">
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#Carrousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#Carrousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- Precio -->
+
+    <div class="container">
+        <div class="div" id="precio" style="width: 100%; margin-top: 10px;">
+            <div class="row" style="margin-bottom: 2px;">
+                <div class="col" style="text-align: center;">
+                    <h2>Precios</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Basico -->
+                <div class=" col">
+                    <h2>Básico</h2>
+                    <p style="margin: 5px; text-align: center;">¡Escoge donde sentarte, desde la web o en taquilla!</p>
+                    <p style="font-size: 20px; text-align: right; margin-right: 20px; margin-bottom: -15px;">Por tan
+                        solo:
+                    </p>
+                    <p
+                        style="font-size: 32px; text-align: right; margin-right: 20px; margin-bottom: -10px; margin-top: -10px; font-weight: bold;">
+                        5,50€</p>
+                </div>
+
+                <!-- Premium -->
+                <div class="col">
+                    <h2>Premium</h2>
+                    <p style="margin: 5px; text-align: center;">¡Escoge donde sentarte, las palomitas que más te gusten
+                        junto con tu bebida!</p>
+                    <p style="font-size: 20px; text-align: right; margin-right: 20px; margin-bottom: -15px;">Por tan
+                        solo:
+                    </p>
+                    <p
+                        style="font-size: 32px; text-align: right; margin-right: 20px; margin-bottom: -10px; font-weight: bold;">
+                        12,50€</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <!-- Formulario -->
+                <div class="div-contacto">
+                    <div class="col" id="home" style="text-align: center;">
+                        <!-- hacemos una columna para poder toda la información -->
+                        <h6> <a href="#Contactanos" style="color: #000; text-decoration: none;">Contacto</a></h6>
+                        <p style="font-size: 18px; margin-top: -10px; color: black;">A tu disposición para vernos de
+                            nuevo
+                        </p>
+
+                        <div class="container" style="text-align: left; margin-top: -40px;">
+                            <!-- hacemos un container que es un recuadro dentro para poner la información -->
+                            <form action=" /action_page.php">
+                                <!-- Action sirve para dirigir a dodne se enviará el formulario, si no se especifica se irá a la misma pagina web. El .php es donde se procesa la info -->
+                                <label for="pnombre">Tu nombre:</label>
+                                <!-- lo que se ve encima del recuadro -->
+                                <input type="texto" id="pnombre" name="nombre" placeholder="Tu nombre..">
+                                <!-- lo que se ve dentro del recuadro -->
+
+                                <label for="apellido">Tus apellidos:</label>
+                                <input type="texto" id="apellidos" name="apellido" placeholder="Tus apellidos..">
+
+                                <label for="contact">Motivo para contactarnos:</label>
+                                <input type="texto" id="contacto" name="contactar"
+                                    placeholder="Motivo para contactarnos..">
+
+                                <input type="submit" value="Submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <!-- Google Maps-->
+                <div class="col" id="lugar" style="text-align: center;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5973.822301082574!2d2.434676600000005!3d41.52786520000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4b4e4409e0875%3A0xc9fbf03a1384100b!2sFundaci%C3%B3n%20TecnoCampus%20Matar%C3%B3-Maresme!5e0!3m2!1ses!2ses!4v1729787070049!5m2!1ses!2ses"
+                        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.
+js"></script>
+</body>
+
+</html>
